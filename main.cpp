@@ -1,3 +1,4 @@
+#include <fstream>
 #include <iostream>
 #include <vector>
 
@@ -42,5 +43,13 @@ int main() {
         constexpr std::string todo_2;
         PrintMessageUpper(todo, 0);
         PrintGet(len, todos, todo_1, todo_2);
+
+        if (std::fstream fFile("file.todos"); fFile.is_open()) {
+            fFile << "Todo 1: " << todo_1 << "\n";
+            fFile << "Todo 2: " << todo_2 << "\n";
+        }
+
+
+
     }
 }
